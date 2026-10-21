@@ -1,0 +1,78 @@
+// Version: 4.0.0
+type AccessControlState__140300680 =
+  {
+    var adminAssigned : Bool;
+    userRoles : Map__386906547<Principal, UserRole__44914475>
+  };
+type Conversation__129870866 =
+  {
+    createdAtNs : Int;
+    id : Nat;
+    messages : List__89170296<StoredMessage__556654917>;
+    var summary : ?Summary__430155052;
+    var title : Text;
+    var updatedAtNs : Int
+  };
+type Conversation__476383100 =
+  {
+    createdAtNs : Int;
+    id : Nat;
+    messages : List__89170296<StoredMessage__638033679>;
+    var summary : ?Summary__254508554;
+    var title : Text;
+    var updatedAtNs : Int
+  };
+type Data__265875254<K, V> = {var count : Nat__58649523; kvs : [var ?(K, V)]};
+type Internal__161573640<K, V> =
+  {children : [var ?Node__430031793<K, V>]; data : Data__265875254<K, V>};
+type Leaf__1045638083<K, V> = {data : Data__265875254<K, V>};
+type List__1004628775<T> =
+  {
+    var blockIndex : Nat__58649523;
+    var blocks : [var [var ?T]];
+    var elementIndex : Nat__58649523
+  };
+type List__89170296<T> = List__1004628775<T>;
+type Map__13625999<K, V> =
+  {var root : Node__430031793<K, V>; var size : Nat__58649523};
+type Map__386906547<K, V> = Map__670138087<K, V>;
+type Map__670138087<K, V> = Map__13625999<K, V>;
+type Nat__58649523 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__509629864 =
+  {
+    accessControlState : AccessControlState__140300680;
+    conversations : Map__386906547<Principal, UserChats__695581777>
+  };
+type Node__430031793<K, V> =
+  {#internal : Internal__161573640<K, V>; #leaf : Leaf__1045638083<K, V>};
+type OldActor__426030763 = {};
+type StoredMessage__556654917 =
+  {content : Text; createdAtNs : Int; role : {#assistant; #user}};
+type StoredMessage__638033679 =
+  {content : Text; createdAtNs : Int; role : {#assistant; #user}};
+type Summary__254508554 =
+  {content : Text; coversCount : Nat; createdAtNs : Int};
+type Summary__430155052 =
+  {content : Text; coversCount : Nat; createdAtNs : Int};
+type UserChats__695581777 =
+  {chats : Map__386906547<Nat, Conversation__476383100>; var nextId : Nat};
+type UserChats__746332571 =
+  {chats : Map__386906547<Nat, Conversation__129870866>; var nextId : Nat};
+type UserRole__44914475 = {#admin; #guest; #user};
+type UserRole__91647283 = {#admin; #guest; #user};
+{
+  "20260903_000000" : (_old : OldActor__426030763) -> NewActor__509629864
+}
+actor  {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__386906547<Principal, UserRole__91647283>
+    };
+  stable conversations :
+    {
+      var root : Node__430031793<Principal, UserChats__746332571>;
+      var size : Nat__58649523
+    }
+};

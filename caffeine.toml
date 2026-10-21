@@ -1,0 +1,10 @@
+manifest_version = "0.1.0"
+
+[project]
+name = "CaffeineChatBot"
+
+[workspace]
+include = ["src/**"]
+
+[canisters.frontend]
+depends_on = ["backend"]

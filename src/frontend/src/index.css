@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  background: #fafaf9;
+  color: #0c0a09;
+}
+
+/* Markdown rendering for assistant bubbles (Caffeine warm-light theme). */
+.markdown-body {
+  color: #44403c;
+}
+.markdown-body > *:first-child {
+  margin-top: 0;
+}
+.markdown-body > *:last-child {
+  margin-bottom: 0;
+}
+.markdown-body p,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body pre,
+.markdown-body blockquote,
+.markdown-body table {
+  margin: 0.5rem 0;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  margin: 0.75rem 0 0.375rem;
+  font-weight: 500;
+  color: #0c0a09;
+}
+.markdown-body h1 {
+  font-size: 1.2rem;
+}
+.markdown-body h2 {
+  font-size: 1.1rem;
+}
+.markdown-body h3,
+.markdown-body h4 {
+  font-size: 1rem;
+}
+.markdown-body ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.markdown-body ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
+}
+.markdown-body li {
+  margin: 0.125rem 0;
+}
+.markdown-body li > ul,
+.markdown-body li > ol {
+  margin: 0.125rem 0;
+}
+.markdown-body code {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.8125rem;
+  background: #f5f5f4;
+  border: 1px solid #e7e5e4;
+  border-radius: 0.25rem;
+  padding: 0.0625rem 0.3rem;
+}
+.markdown-body pre {
+  background: #fafaf9;
+  border: 1px solid #e7e5e4;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  overflow-x: auto;
+}
+.markdown-body pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: 0.8125rem;
+}
+.markdown-body blockquote {
+  border-left: 3px solid #d6d3d1;
+  padding-left: 0.75rem;
+  color: #78716c;
+}
+.markdown-body a {
+  color: #2b69f6;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.markdown-body a:hover {
+  color: #2a54ec;
+}
+.markdown-body hr {
+  border: 0;
+  border-top: 1px solid #e7e5e4;
+  margin: 0.75rem 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+}
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid #e7e5e4;
+  padding: 0.25rem 0.6rem;
+  text-align: left;
+}
+.markdown-body th {
+  background: #f5f5f4;
+  font-weight: 500;
+}
+.markdown-body strong {
+  color: #0c0a09;
+  font-weight: 600;
+}
+
+/* Brand text selection (DESIGN: Selection Lime, its only sanctioned use). */
+::selection {
+  background: #ddf730;
+  color: #0c0a09;
+}
